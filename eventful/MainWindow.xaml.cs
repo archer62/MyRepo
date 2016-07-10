@@ -35,6 +35,7 @@ namespace eventful
                 if (searchButton.Content.ToString() == "Search")
                 {
                     searchButton.Content = "Cancel";
+
                     await _viewModel.GetResponse(textBoxLocation.Text, datePickerStartDate.SelectedDate, datePickerEndDate.SelectedDate, textBoxKeywords.Text);
                     searchButton.Content = "Search";
                     MessageBox.Show("Done!");

@@ -12,7 +12,6 @@ namespace eventful
 {
     class MainViewModel : INotifyPropertyChanged
     {
-        //private Response _response;
         private ObservableCollection<Event> _events;
         private Event _selectedEvent;
 
@@ -85,6 +84,9 @@ namespace eventful
 
         public async Task<ObservableCollection<Event>> GetResponse(string location = "", DateTime? start = null, DateTime? end = null, string keywords = "")
         {
+            source = new CancellationTokenSource();
+            token = source.Token;
+
             _events = new ObservableCollection<Event>();
             var t = Task.Run(() => WebRequest(token, location, start, end, keywords), token);
             await t;

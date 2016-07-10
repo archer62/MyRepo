@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:eventful"
         mc:Ignorable="d"
-        Title="MainWindow" Height="Auto" Width="544.5">
+        Title="Eventful" Height="Auto" Width="544.5">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -35,18 +35,18 @@
         <Button Grid.Row="2" Click="Button_Click" Content="Search" Name="searchButton"></Button>
         <ListBox Name="searchResults" Grid.Row="3" Grid.ColumnSpan="4" ItemsSource="{Binding Events}" DisplayMemberPath="Title"  
                  SelectedItem="{Binding SelectedEvent}"></ListBox>
-        <TextBlock Grid.Row="4" Margin="5 3">Description</TextBlock>
+        <TextBlock Grid.Row="4" Margin="5 3">Description:</TextBlock>
         <ScrollViewer Grid.Row="4" Grid.Column="1" Height="80" Grid.ColumnSpan="3" VerticalScrollBarVisibility="Auto" CanContentScroll="True" >
             <TextBlock Name="details" 
          Margin="5 3" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3" TextWrapping="Wrap" Text="{Binding ElementName=searchResults, Path=SelectedItem.Description}"></TextBlock>
         </ScrollViewer>
-        <TextBlock Grid.Row="5" Margin="5 3">Start time</TextBlock>
+        <TextBlock Grid.Row="5" Margin="5 3">Start time:</TextBlock>
         <TextBlock Grid.Row="5" Margin="5 3" Grid.Column="1" Grid.ColumnSpan="3" Text="{Binding ElementName=searchResults, Path=SelectedItem.StartTime}"></TextBlock>
-        <TextBlock Grid.Row="6" Margin="5 3">Venue name</TextBlock>
+        <TextBlock Grid.Row="6" Margin="5 3">Venue name:</TextBlock>
         <TextBlock Grid.Row="6" Margin="5 3" Grid.Column="1" Grid.ColumnSpan="3" Text="{Binding ElementName=searchResults, Path=SelectedItem.VenueName}"></TextBlock>
-        <TextBlock Grid.Row="7" Margin="5 3">Address</TextBlock>
+        <TextBlock Grid.Row="7" Margin="5 3">Address:</TextBlock>
         <TextBlock Grid.Row="7" Margin="5 3" Grid.Column="1" Grid.ColumnSpan="3" Text="{Binding ElementName=searchResults, Path=SelectedItem.VenueAddress}"></TextBlock>
-        <TextBlock Grid.Row="8" Margin="5 3">City</TextBlock>
+        <TextBlock Grid.Row="8" Margin="5 3">City:</TextBlock>
         <TextBlock Grid.Row="8" Margin="5 3" Grid.Column="1" Grid.ColumnSpan="3" Text="{Binding ElementName=searchResults, Path=SelectedItem.City}"></TextBlock>
     </Grid>
 </Window>
